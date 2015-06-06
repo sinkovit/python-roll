@@ -2,12 +2,13 @@ ifndef ROLLCOMPILER
   ROLLCOMPILER = gnu
 endif
 COMPILERNAME := $(firstword $(subst /, ,$(ROLLCOMPILER)))
+COMPILERVERSION := $(lastword $(subst /, ,$(ROLLCOMPILER)))
 
-NAME               = sdsc-python-3
+NAME               = sdsc-python-3-$(COMPILERNAME)-$(COMPILERVERSION)
 VERSION            = 3.4.2
 MAJOR.MINOR        = 3.4
 RELEASE            = 6
-PKGROOT            = /opt/python
+PKGROOT            = /opt/python-$(COMPILERNAME)-$(COMPILERVERSION)
 
 SRC_SUBDIR         = python-3
 

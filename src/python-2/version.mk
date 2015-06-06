@@ -2,11 +2,12 @@ ifndef ROLLCOMPILER
   ROLLCOMPILER = gnu
 endif
 COMPILERNAME := $(firstword $(subst /, ,$(ROLLCOMPILER)))
+COMPILERVERSION := $(lastword $(subst /, ,$(ROLLCOMPILER)))
 
-NAME               = sdsc-python-27
+NAME               = sdsc-python-27-$(COMPILERNAME)-$(COMPILERVERSION)
 VERSION            = 2.7.9
 RELEASE            = 2
-PKGROOT            = /opt/python
+PKGROOT            = /opt/python-$(COMPILERNAME)-$(COMPILERVERSION)
 
 SRC_SUBDIR         = python-2
 

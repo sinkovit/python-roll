@@ -75,7 +75,6 @@ DESCRIPTION:
 	( \
 	  $(DESCRIBE_PKG); \
 	  $(DESCRIBE_CC); \
-	  $(DESCRIBE_MKL) \
 	) > $@
 
 LICENSE: $(SRC_DIRS)
@@ -103,8 +102,7 @@ install::
 	$(PKGROOT_BIND_MOUNT)
 	( \
 	  $(MODULE_LOAD_CC); \
-	  $(MODULE_LOAD_MKL); \
-	  export MKLLIB=`find $${MKLHOME}/lib/* -maxdepth 0 | head -1`; \
+	  export MKLLIB=`find $${MKLROOT}/lib/* -maxdepth 0 | head -1`; \
 	  cd $(SOURCE_DIR); \
 	  export LDFLAGS=-L$(PKGROOT)/lib; \
 	  $(MAKE) DESTDIR=/ altinstall;\
