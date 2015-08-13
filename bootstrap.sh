@@ -70,11 +70,10 @@
 # Copyright Storm for Mamba
 #
 # Revision 1.2  2011/07/23 02:31:16  phil
-# Viper Copyright
+# Viper Copyleft
 #
 # Revision 1.1  2011/07/22 17:54:09  anoop
 # Added bootstrap script to python roll. Required for itself
-# and for the bio roll
 #
 
 . $ROCKSROOT/src/roll/etc/bootstrap-functions.sh
@@ -88,3 +87,5 @@ install opt-python-27
 
 compile numpy
 install opt-numpy
+
+# I added a new comment
